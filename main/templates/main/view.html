@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+{% block title %}View{% endblock %}
+{% block content %}
+<h1>Your lists</h1>
+<div class="list-group">
+    {% for td in user.todolist.all %}
+        <a href="/{{td.id}}" class="list-group-item list-group-item-action">{{td.name}}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
